@@ -8,4 +8,7 @@ def home(request):
 def reverse(request):
     user_text = request.GET['usertext']
     reversed_text = user_text[::-1]
-    return render(request, 'reverse.html', {'usertext': user_text, 'reversed_text': reversed_text})
+    len_of_user_text = len(user_text.split(' '))
+    return render(request, 'reverse.html', {'usertext': user_text,
+                                            'reversed_text': reversed_text,
+                                            'length': len_of_user_text})
